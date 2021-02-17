@@ -39,7 +39,12 @@ namespace FizzBuzzCore.Controllers
             for (var index = 1; index <= 100; index++)
             {
 
-                if (index % fizzNum == 0)
+                if (index % fizzNum == 0 && index % buzzNum == 0)
+                {
+                    output.AppendLine("FizzBuzz");
+                }
+
+                else if (index % fizzNum == 0)
                 {
                     output.AppendLine("Fizz");
                 }
@@ -49,16 +54,11 @@ namespace FizzBuzzCore.Controllers
                     output.AppendLine("Buzz");
                 }
                 
-                else if (index % fizzNum == 0 && index % fizzNum == 0)
-                {
-                    output.AppendLine("FizzBuzz");
+                else {                            
+                output.AppendLine(index.ToString());
                 }
-                
-                
-                    output.AppendLine(index.ToString());
-                
-                
-                
+
+
             }
             ViewData["Output"] = output.ToString();
             return View();
